@@ -7,6 +7,7 @@ ex0*/.vscode
 #leaks reports
 leaks.*.txt
 #ex00
+bureaucrat
 #ex01
 #ex02
 #ex03
