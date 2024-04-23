@@ -3,5 +3,6 @@
     "42header.username": "bazuara",
     "C_Cpp.autoAddFileAssociations": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "git.openRepositoryInParentFolders": "never"
 }
