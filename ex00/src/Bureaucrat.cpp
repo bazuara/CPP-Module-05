@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:54:48 by bazuara           #+#    #+#             */
-/*   Updated: 2024/04/23 10:28:11 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/04/23 10:39:01 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,22 @@ int Bureaucrat::getGrade() const {
 }
 
 Bureaucrat::~Bureaucrat() {}
+
+void Bureaucrat::incrementGrade() {
+  if (this->grade == 1) {
+    throw GradeTooHighException();
+  } else {
+    this->grade--;
+  }
+}
+
+void Bureaucrat::decrementGrade() {
+  if (this->grade == 150) {
+    throw GradeTooLowException();
+  } else {
+    this->grade++;
+  }
+}
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
   os << b.getName() << ", bureaucrat grade " << b.getGrade();
