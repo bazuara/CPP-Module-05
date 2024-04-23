@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:50:26 by bazuara           #+#    #+#             */
-/*   Updated: 2024/04/23 09:01:00 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/04/23 10:31:09 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 #define BUREAUCRAT_HPP
 
 #include <BureaucratException.hpp>
-#include <iostream>
-#include <string>
 
 class Bureaucrat {
  private:
-  std::string name;
+  std::string const name;
   int grade;
 
  public:
-  Bureaucrat(std::string name, int grade);
+  Bureaucrat(std::string const name, int grade);
   Bureaucrat(Bureaucrat const& other);
   Bureaucrat& operator=(Bureaucrat const& other);
   ~Bureaucrat();
