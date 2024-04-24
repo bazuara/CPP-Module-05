@@ -3,9 +3,7 @@ NAME = bureaucrat
 # Source files
 SOURCE_FOLDER = src/
 SOURCE_FILES =  main.cpp \
-				Bureaucrat.cpp \
-				BureaucratException.cpp
-				
+				Bureaucrat.cpp				
 
 SOURCES = $(addprefix $(SOURCE_FOLDER), $(SOURCE_FILES))
 

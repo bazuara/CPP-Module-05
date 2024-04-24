@@ -6,14 +6,15 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:50:26 by bazuara           #+#    #+#             */
-/*   Updated: 2024/04/23 10:31:09 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/04/24 11:02:11 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <BureaucratException.hpp>
+#include <iostream>
+#include <string>
 
 class Bureaucrat {
  private:
@@ -30,6 +31,24 @@ class Bureaucrat {
   int getGrade() const;
   void incrementGrade();
   void decrementGrade();
+
+  class GradeTooHighException : public std::exception {
+   private:
+    std::string message;
+
+   public:
+    GradeTooHighException();
+    const char* what() const throw();
+  };
+
+  class GradeTooLowException : public std::exception {
+   private:
+    std::string message;
+
+   public:
+    GradeTooLowException();
+    const char* what() const throw();
+  };
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
