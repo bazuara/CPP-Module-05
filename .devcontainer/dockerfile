@@ -1,5 +1,8 @@
 FROM silkeh/clang:11-bullseye
 
+#set timezone to europe/madrid
+RUN ln -fs /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+
 RUN apt update && apt install -y \
     git \
     cmake \
