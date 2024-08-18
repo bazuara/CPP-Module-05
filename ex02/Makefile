@@ -5,7 +5,8 @@ SOURCE_FOLDER = src/
 SOURCE_FILES =  main.cpp \
 				Bureaucrat.cpp \
 				AForm.cpp \
-				ShrubberyCreationForm.cpp
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp
 
 SOURCES = $(addprefix $(SOURCE_FOLDER), $(SOURCE_FILES))
 
