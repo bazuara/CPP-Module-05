@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:50:12 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 00:34:13 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:40:27 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,15 @@ int main(void) {
   f3.beSigned(fry);
   f3.execute(fry);
   std::cout << "***** End PresidentialPardonForm *****" << std::endl << std::endl;
+
+  std::cout << "***** Testing bureaucrat executing forms *****" << std::endl;
+  std::cout << "***** ShrubberyCreationForm *****" << std::endl;
+  fry.executeForm(f1);
+  std::cout << "***** RobotomyRequestForm *****" << std::endl;
+  fry.executeForm(f2);
+  std::cout << "***** PresidentialPardonForm *****" << std::endl;
+  fry.executeForm(f3);
+  std::cout << "***** End testing bureaucrat executing forms *****" << std::endl;
 
   return 0;
 }
