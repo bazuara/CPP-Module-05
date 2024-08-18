@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:56:06 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/18 22:00:14 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:22:06 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const& target)
     : AForm("ShrubberyCreationForm", 145, 137) {
-    //create file <target>_shrubbery
-    std::ofstream file(target + "_shrubbery");
-    if (!file.is_open()) {
-        throw std::runtime_error("Error: could not create file");
-    //write ASCII trees inside it
-    } else {
-        file << "       _-_\n"
-                "    /~~   ~~\\\n"
-                " /~~         ~~\\\n"
-                "{               }\n"
-                " \\  _-     -_  /\n"
-                "   ~  \\\\ //  ~\n"
-                "_- -   | | _- _\n"
-                "  _ -  | |   -_\n"
-                "      // \\\\" << std::endl;
-        file.close();
-    }
+        this->setTarget(target);
     }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other)
@@ -48,4 +32,31 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::beSigned(Bureaucrat const& b) {
     AForm::beSigned(b);
+}
+
+void ShrubberyCreationForm::setTarget(std::string const& target) {
+    this->target = target;
+}
+
+std::string const& ShrubberyCreationForm::getTarget() const {
+    return this->target;
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
+    AForm::execute(executor);
+    std::ofstream file(this->getTarget() + "_shrubbery");
+    if (!file.is_open()) {
+        throw std::runtime_error("Error: could not create file");
+    } else {
+        file << "       _-_\n"
+                "    /~~   ~~\\\n"
+                " /~~         ~~\\\n"
+                "{               }\n"
+                " \\  _-     -_  /\n"
+                "   ~  \\\\ //  ~\n"
+                "_- -   | | _- _\n"
+                "  _ -  | |   -_\n"
+                "      // \\\\" << std::endl;
+        file.close();
+    }
 }

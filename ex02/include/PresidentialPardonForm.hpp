@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 21:49:14 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 00:20:20 by bazuara          ###   ########.fr       */
+/*   Created: 2024/08/18 22:28:56 by bazuara           #+#    #+#             */
+/*   Updated: 2024/08/19 00:26:02 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-#define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
 #include <AForm.hpp>
-#include <fstream>
 
-// Class ShrubberyCreationForm : public AForm
-// Required grades: sign 145, exec 137
-// Create a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
-
-class ShrubberyCreationForm : public AForm {
-
+class PresidentialPardonForm : public AForm {
  private:
-  std::string target;
+    std::string target;
  public:
-  ShrubberyCreationForm(std::string const& target);
-  ShrubberyCreationForm(ShrubberyCreationForm const& other);
-  ShrubberyCreationForm& operator=(ShrubberyCreationForm const& other);
-  ~ShrubberyCreationForm();
+  PresidentialPardonForm(std::string const& target);
+  PresidentialPardonForm(PresidentialPardonForm const& other);
+  PresidentialPardonForm& operator=(PresidentialPardonForm const& other);
+  ~PresidentialPardonForm();
 
   void setTarget(std::string const& target);
   std::string const& getTarget() const;
@@ -37,6 +31,4 @@ class ShrubberyCreationForm : public AForm {
   void execute(Bureaucrat const& executor) const;
 };
 
-
-
-#endif // !SHRUBBERYCREATIONFORM_HPP
+#endif // PRESIDENTIALPARDONFORM_HPP

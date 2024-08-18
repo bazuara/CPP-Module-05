@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 22:14:55 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/18 22:25:47 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:24:56 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,7 @@
 // Otherwise, informs that the robotomy failed.
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const& target) : AForm("RobotomyRequestForm", 72, 45) {
-    // drilling noises
-    std::cout << "Bzzzzzzzz Bzzzzzzz Bzzzzz A.K.A: Drilling noises" << std::endl;
-    // robotomized successfully 50% of the time
-    std::srand(std::time(0));
-    if (rand() % 2) {
-        std::cout << target << " has been robotomized successfully" << std::endl;
-    } else {
-        std::cout << "Robotomy failed" << std::endl;
-    }
+    setTarget(target);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& other) : AForm(other) {
@@ -42,6 +34,27 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& o
 RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
+void RobotomyRequestForm::setTarget(std::string const& target) {
+    this->target = target;
+}
+
+std::string const& RobotomyRequestForm::getTarget() const {
+    return this->target;
+}
+
 void RobotomyRequestForm::beSigned(Bureaucrat const& b) {
     AForm::beSigned(b);
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
+    AForm::execute(executor);
+        // drilling noises
+    std::cout << "Bzzzzzzzz Bzzzzzzz Bzzzzz A.K.A: Drilling noises" << std::endl;
+    // robotomized successfully 50% of the time
+    std::srand(std::time(0));
+    if (rand() % 2) {
+        std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
+    } else {
+        std::cout << "Robotomy failed" << std::endl;
+    }
 }
