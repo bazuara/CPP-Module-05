@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bureaucrat.hpp>
+#include <Bureaucrat.hpp>
 
 int main(void) {
   Bureaucrat hermes = Bureaucrat("Hermes Conrad", 150);
