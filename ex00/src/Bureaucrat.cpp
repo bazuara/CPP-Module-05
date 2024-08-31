@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:54:48 by bazuara           #+#    #+#             */
-/*   Updated: 2024/04/24 11:00:52 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:23:39 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
   return this->message.c_str();
 }
 
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+
 // GradeTooLowExceptions
 Bureaucrat::GradeTooLowException::GradeTooLowException() {
   this->message = "Grade is too low";
@@ -84,3 +86,5 @@ Bureaucrat::GradeTooLowException::GradeTooLowException() {
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
   return this->message.c_str();
 }
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}

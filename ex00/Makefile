@@ -15,14 +15,14 @@ OBJECTS= $(SOURCE_FILES:.cpp=.o)
 HEADERS_FOLDER	= include/
 
 # Flags and output
-CXXFLAGS = -Wall -Wextra -Werror -Wno-c++0x-compat -std=c++98
+CXXCFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 # Rule to build your object files and link them into a binary
 $(NAME): $(OBJECTS)
 	@echo "🚧 Compiling binary... 🚧"
-	@c++ $(OBJECTS) -o $(NAME)
+	c++ $(CXXCFLAGS) $(OBJECTS) -o $(NAME)
 	@echo "✅ Done!"
 
 #objects
