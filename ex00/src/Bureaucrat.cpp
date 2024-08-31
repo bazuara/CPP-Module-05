@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bureaucrat.hpp>
+#include <Bureaucrat.hpp>
 
 Bureaucrat::Bureaucrat(std::string const n, int g) : name(n) {
   // std::cout << "Bureaucrat constructor called" << std::endl
