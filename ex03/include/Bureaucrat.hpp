@@ -22,6 +22,7 @@ class Bureaucrat {
  private:
   std::string const name;
   int grade;
+  Bureaucrat();
 
  public:
   Bureaucrat(std::string const name, int grade);

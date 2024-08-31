@@ -24,6 +24,7 @@ class Form {
   bool signature;
   int const gradeToSign;
   int const gradeToExecute;
+  Form();
 
  public:
   Form(std::string const name, int gradeToSign, int gradeToExecute);

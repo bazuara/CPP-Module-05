@@ -20,6 +20,11 @@
 #include <PresidentialPardonForm.hpp>
 
 class Intern {
+ private:
+  AForm *createShrubberyCreationForm(std::string target);
+  AForm *createRobotomyRequestForm(std::string target);
+  AForm *createPresidentialPardonForm(std::string target);
+
  public:
   Intern();
   Intern(const Intern &other);
@@ -27,12 +32,6 @@ class Intern {
   Intern &operator=(const Intern &other);
 
   AForm *makeForm(std::string formName, std::string target);
-
- private:
-  AForm *createShrubberyCreationForm(std::string target);
-  AForm *createRobotomyRequestForm(std::string target);
-  AForm *createPresidentialPardonForm(std::string target);
-
   class FormNotFoundException : public std::exception {
    private:
     std::string message;
