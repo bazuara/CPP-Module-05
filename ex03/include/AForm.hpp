@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:22:07 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:14:53 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/05/25 11:41:07 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm {
   AForm(std::string const name, int gradeToSign, int gradeToExecute);
   AForm(AForm const& other);
   AForm& operator=(AForm const& other);
-  ~AForm();
+  virtual ~AForm();
 
   std::string const& getName() const;
   bool getSignature() const;
@@ -47,6 +47,7 @@ class AForm {
    public:
     GradeTooHighException();
     const char* what() const throw();
+    virtual ~GradeTooHighException() throw();
   };
 
   class GradeTooLowException : public std::exception {
@@ -56,6 +57,7 @@ class AForm {
    public:
     GradeTooLowException();
     const char* what() const throw();
+    virtual ~GradeTooLowException() throw();
   };
 
   class FormNotSignedException : public std::exception {
@@ -65,6 +67,7 @@ class AForm {
    public:
     FormNotSignedException();
     const char* what() const throw();
+    virtual ~FormNotSignedException() throw();
   };
 };
 

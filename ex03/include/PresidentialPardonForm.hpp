@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 22:28:56 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:24:17 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:26:02 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class PresidentialPardonForm : public AForm {
  private:
-  std::string target;
-  PresidentialPardonForm();
+    std::string target;
+    PresidentialPardonForm();
 
  public:
-  explicit PresidentialPardonForm(std::string const& target);
+  PresidentialPardonForm(std::string const& target);
   PresidentialPardonForm(PresidentialPardonForm const& other);
   PresidentialPardonForm& operator=(PresidentialPardonForm const& other);
   ~PresidentialPardonForm();
@@ -33,4 +33,4 @@ class PresidentialPardonForm : public AForm {
   void execute(Bureaucrat const& executor) const;
 };
 
-#endif  // !PRESIDENTIALPARDONFORM_HPP
+#endif // PRESIDENTIALPARDONFORM_HPP

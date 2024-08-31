@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 06:50:26 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 00:39:20 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:45:35 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat {
    public:
     GradeTooHighException();
     const char* what() const throw();
+    virtual ~GradeTooHighException() throw();
   };
 
   class GradeTooLowException : public std::exception {
@@ -54,6 +55,7 @@ class Bureaucrat {
    public:
     GradeTooLowException();
     const char* what() const throw();
+    virtual ~GradeTooLowException() throw();
   };
 };
 

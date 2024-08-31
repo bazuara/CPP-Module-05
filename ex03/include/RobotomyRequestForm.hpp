@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 22:13:02 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:26:42 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:53:19 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <AForm.hpp>
+#include <cstdlib>  // add this line at the beginning of your file
 #include <ctime>
 
 class RobotomyRequestForm : public AForm {
+
  private:
   std::string target;
   RobotomyRequestForm();
 
  public:
-  explicit RobotomyRequestForm(std::string const& target);
+  RobotomyRequestForm(std::string const& target);
   RobotomyRequestForm(RobotomyRequestForm const& other);
   RobotomyRequestForm& operator=(RobotomyRequestForm const& other);
   ~RobotomyRequestForm();

@@ -83,6 +83,8 @@ const char* Bureaucrat::GradeTooHighException::what() const throw() {
   return this->message.c_str();
 }
 
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+
 // GradeTooLowExceptions
 Bureaucrat::GradeTooLowException::GradeTooLowException() {
   this->message = "Grade is too low";
@@ -90,6 +92,8 @@ Bureaucrat::GradeTooLowException::GradeTooLowException() {
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
   return this->message.c_str();
 }
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 // << operator overload
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {

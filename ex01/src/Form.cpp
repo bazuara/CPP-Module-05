@@ -19,15 +19,16 @@ Form::Form(std::string const name, int gradeToSign, int gradeToExecute)
     throw GradeTooHighException();
   } else if (gradeToSign > 150 || gradeToExecute > 150) {
     throw GradeTooLowException();
+  } else {
+    this->signature = false;
   }
-  this->signature = false;
 }
 
 Form::Form(Form const& other)
     : name(other.name),
+      signature(other.signature),
       gradeToSign(other.gradeToSign),
-      gradeToExecute(other.gradeToExecute),
-      signature(other.signature) {}
+      gradeToExecute(other.gradeToExecute) {}
 
 Form& Form::operator=(Form const& other) {
   this->signature = other.signature;
@@ -68,6 +69,8 @@ const char* Form::GradeTooHighException::what() const throw() {
   return this->message.c_str();
 }
 
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+
 // GradeTooLowExceptions
 Form::GradeTooLowException::GradeTooLowException() {
   this->message = "Grade is too low";
@@ -75,6 +78,8 @@ Form::GradeTooLowException::GradeTooLowException() {
 const char* Form::GradeTooLowException::what() const throw() {
   return this->message.c_str();
 }
+
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 
 // << overload
 

@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:49:14 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:28:35 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:20:20 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 
 // Class ShrubberyCreationForm : public AForm
 // Required grades: sign 145, exec 137
-// Create a file <target>_shrubbery in the working directory
-// and writes ASCII trees inside it.
+// Create a file <target>_shrubbery in the working directory, and writes ASCII trees inside it.
 
 class ShrubberyCreationForm : public AForm {
+
  private:
   std::string target;
   ShrubberyCreationForm();
 
  public:
-  explicit ShrubberyCreationForm(std::string const& target);
+  ShrubberyCreationForm(std::string const& target);
   ShrubberyCreationForm(ShrubberyCreationForm const& other);
   ShrubberyCreationForm& operator=(ShrubberyCreationForm const& other);
   ~ShrubberyCreationForm();
@@ -39,4 +39,6 @@ class ShrubberyCreationForm : public AForm {
   void execute(Bureaucrat const& executor) const;
 };
 
-#endif  // !SHRUBBERYCREATIONFORM_HPP
+
+
+#endif // !SHRUBBERYCREATIONFORM_HPP

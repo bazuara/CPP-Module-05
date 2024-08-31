@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Bureaucrat.hpp>
 #include <AForm.hpp>
+#include <Bureaucrat.hpp>
 
 AForm::AForm(std::string const name, int gradeToSign, int gradeToExecute)
     : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) {
@@ -25,9 +25,9 @@ AForm::AForm(std::string const name, int gradeToSign, int gradeToExecute)
 
 AForm::AForm(AForm const& other)
     : name(other.name),
+      signature(other.signature),
       gradeToSign(other.gradeToSign),
-      gradeToExecute(other.gradeToExecute),
-      signature(other.signature) {}
+      gradeToExecute(other.gradeToExecute) {}
 
 AForm& AForm::operator=(AForm const& other) {
   this->signature = other.signature;
@@ -78,6 +78,8 @@ const char* AForm::GradeTooHighException::what() const throw() {
   return this->message.c_str();
 }
 
+AForm::GradeTooHighException::~GradeTooHighException() throw() {}
+
 // GradeTooLowExceptions
 AForm::GradeTooLowException::GradeTooLowException() {
   this->message = "Grade is too low";
@@ -86,6 +88,8 @@ const char* AForm::GradeTooLowException::what() const throw() {
   return this->message.c_str();
 }
 
+AForm::GradeTooLowException::~GradeTooLowException() throw() {}
+
 // FormNotSignedExceptions
 AForm::FormNotSignedException::FormNotSignedException() {
   this->message = "Form is not signed";
@@ -93,6 +97,8 @@ AForm::FormNotSignedException::FormNotSignedException() {
 const char* AForm::FormNotSignedException::what() const throw() {
   return this->message.c_str();
 }
+
+AForm::FormNotSignedException::~FormNotSignedException() throw() {}
 
 // << overload
 
