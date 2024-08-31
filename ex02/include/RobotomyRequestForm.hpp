@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 22:13:02 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 00:23:11 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/31 17:53:19 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <AForm.hpp>
+#include <cstdlib>  // add this line at the beginning of your file
 #include <ctime>
 
 class RobotomyRequestForm : public AForm {
@@ -35,4 +36,4 @@ class RobotomyRequestForm : public AForm {
   void execute(Bureaucrat const& executor) const;
 };
 
-#endif // !ROBOTOMYREQUESTFORM_HPP
+#endif  // !ROBOTOMYREQUESTFORM_HPP
