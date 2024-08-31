@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 00:51:33 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:29:32 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/08/31 18:05:09 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Intern& Intern::operator=(const Intern& other) {
 }
 
 AForm* Intern::makeForm(std::string formName, std::string target) {
-  AForm* form = nullptr;
+  AForm* form = 0;
 
   std::string formNames[3] = {"shrubbery creation", "robotomy request",
                               "presidential pardon"};
@@ -42,7 +42,7 @@ AForm* Intern::makeForm(std::string formName, std::string target) {
     }
   }
 
-  if (form == nullptr) {
+  if (form == 0) {
     throw Intern::FormNotFoundException();
   }
 
@@ -68,3 +68,5 @@ Intern::FormNotFoundException::FormNotFoundException() {
 const char* Intern::FormNotFoundException::what() const throw() {
   return this->message.c_str();
 }
+
+Intern::FormNotFoundException::~FormNotFoundException() throw() {}

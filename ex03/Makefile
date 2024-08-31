@@ -20,7 +20,7 @@ OBJECTS= $(SOURCE_FILES:.cpp=.o)
 HEADERS_FOLDER	= include/
 
 # Flags and output
-CXXFLAGS = -Wall -Wextra -Werror -Wno-c++0x-compat -std=c++98
+CXXCFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

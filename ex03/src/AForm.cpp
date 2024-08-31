@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:13:03 by bazuara           #+#    #+#             */
-/*   Updated: 2024/08/19 01:28:54 by bazuara          ###   ########.fr       */
+/*   Updated: 2024/05/25 11:41:29 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ AForm::AForm(std::string const name, int gradeToSign, int gradeToExecute)
 
 AForm::AForm(AForm const& other)
     : name(other.name),
+      signature(other.signature),
       gradeToSign(other.gradeToSign),
-      gradeToExecute(other.gradeToExecute),
-      signature(other.signature) {}
+      gradeToExecute(other.gradeToExecute) {}
 
 AForm& AForm::operator=(AForm const& other) {
   this->signature = other.signature;
@@ -78,6 +78,8 @@ const char* AForm::GradeTooHighException::what() const throw() {
   return this->message.c_str();
 }
 
+AForm::GradeTooHighException::~GradeTooHighException() throw() {}
+
 // GradeTooLowExceptions
 AForm::GradeTooLowException::GradeTooLowException() {
   this->message = "Grade is too low";
@@ -86,6 +88,8 @@ const char* AForm::GradeTooLowException::what() const throw() {
   return this->message.c_str();
 }
 
+AForm::GradeTooLowException::~GradeTooLowException() throw() {}
+
 // FormNotSignedExceptions
 AForm::FormNotSignedException::FormNotSignedException() {
   this->message = "Form is not signed";
@@ -93,6 +97,8 @@ AForm::FormNotSignedException::FormNotSignedException() {
 const char* AForm::FormNotSignedException::what() const throw() {
   return this->message.c_str();
 }
+
+AForm::FormNotSignedException::~FormNotSignedException() throw() {}
 
 // << overload
 
