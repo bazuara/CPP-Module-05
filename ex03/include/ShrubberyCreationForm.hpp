@@ -24,6 +24,7 @@
 class ShrubberyCreationForm : public AForm {
  private:
   std::string target;
+  ShrubberyCreationForm();
 
  public:
   explicit ShrubberyCreationForm(std::string const& target);
